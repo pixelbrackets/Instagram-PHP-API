@@ -151,15 +151,16 @@ Returns access token, if you want to store it for later usage:
 
 - `getUser($id)`
 - `searchUser($name, <$limit>)`
-- `getUserMedia($id, <$limit>)`
+- `getPublicUserMedia($id, <$limit>)`
+    - a valid user ID is required and the profile has to be public
 
 **Authenticated methods**
 
 - `getUser()`
 - `getUserLikes(<$limit>)`
 - `getUserFeed(<$limit>)`
-- `getUserMedia(<$id>, <$limit>)`
-    - if an `$id` isn't defined, it returns the media of the logged in user
+- `getUserMedia('<$id>', <$limit>)`
+    - if `$id` isn't defined or equals 'self', it returns the media of the logged in user
 
 > [Sample responses of the User Endpoints.](http://instagram.com/developer/endpoints/users/)
 
