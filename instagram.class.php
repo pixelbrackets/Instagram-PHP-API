@@ -149,6 +149,17 @@ class Instagram {
   }
 
   /**
+   * Get recent media of a public user
+   *
+   * @param integer $id                   Instagram user ID (no private profile allowed)
+   * @param integer [optional] $limit     Limit of returned results
+   * @return mixed
+   */
+  public function getPublicUserMedia($id, $limit = 0) {
+    return $this->_makeCall('users/' . $id . '/media/recent', false, array('count' => $limit));
+  }
+
+  /**
    * Get the liked photos of a user
    *
    * @param integer [optional] $limit     Limit of returned results
